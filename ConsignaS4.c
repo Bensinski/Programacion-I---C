@@ -36,19 +36,21 @@ int main (int argc, char *argv[]) {
                 break;}
             else{
                 strcpy(nompro[pro], nnom);}
-            printf("Precio: $");
-            scanf("%f", &pre[pro]);
-            while (pre[pro]<0){
+            int valpre=0;
+                printf("Precio: $");
+            valpre=scanf("%f", &pre[pro]);
+            while (pre[pro]<0 || valpre!=1){
+                while ((getchar())!='\n');
                 printf("Precio invalido. Ingresa nuevamente: $");
                 scanf("%f", &pre[pro]);}
-            printf("Stock: ");
-            scanf("%d", &stck[pro]);
-            while (stck[pro]<0){
+            int vals=0;
+                printf("Stock: ");
+            vals=scanf("%d", &stck[pro]);
+            while (stck[pro]<0 || vals!=1){
+                while ((getchar())!='\n');
                 printf("Stock invalido. Ingresa nuevamente: ");
                 scanf("%d", &stck[pro]);}
             if (pro==0){
-                strcpy(mbar, nompro[pro]);
-                strcpy(mcar, nompro[pro]);
                 car=pre[pro];
                 bar=pre[pro];}
             if (pre[pro]<bar){
