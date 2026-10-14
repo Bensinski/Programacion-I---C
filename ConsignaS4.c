@@ -42,14 +42,14 @@ int main (int argc, char *argv[]) {
             while (pre[pro]<0 || valpre!=1){
                 while ((getchar())!='\n');
                 printf("Precio invalido. Ingresa nuevamente: $");
-                scanf("%f", &pre[pro]);}
+                valpre=scanf("%f", &pre[pro]);}
             int vals=0;
                 printf("Stock: ");
             vals=scanf("%d", &stck[pro]);
             while (stck[pro]<0 || vals!=1){
                 while ((getchar())!='\n');
                 printf("Stock invalido. Ingresa nuevamente: ");
-                scanf("%d", &stck[pro]);}
+                vals=scanf("%d", &stck[pro]);}
             if (pro==0){
                 car=pre[pro];
                 bar=pre[pro];}
