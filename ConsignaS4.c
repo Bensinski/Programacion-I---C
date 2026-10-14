@@ -38,18 +38,22 @@ int main (int argc, char *argv[]) {
                 strcpy(nompro[pro], nnom);}
             int valpre=0;
                 printf("Precio: $");
-            valpre=scanf("%f", &pre[pro]);
-            while (pre[pro]<0 || valpre!=1){
-                while ((getchar())!='\n');
-                printf("Precio invalido. Ingresa nuevamente: $");
-                valpre=scanf("%f", &pre[pro]);}
+                do{
+                    valpre=scanf("%f", &pre[pro]);
+                    while ((getchar())!='\n');
+                    if(pre[pro]<=0 || valpre!=1){
+                        printf("Precio invalido. Ingresa nuevamente: $");
+                    }}
+                while(pre[pro]<=0 || valpre!=1);
             int vals=0;
                 printf("Stock: ");
-            vals=scanf("%d", &stck[pro]);
-            while (stck[pro]<0 || vals!=1){
-                while ((getchar())!='\n');
-                printf("Stock invalido. Ingresa nuevamente: ");
-                vals=scanf("%d", &stck[pro]);}
+                do{
+                    vals=scanf("%d", &stck[pro]);
+                    while ((getchar())!='\n');
+                    if(stck[pro]<=0 || vals!=1){
+                        printf("Stock invalido. Ingresa nuevamente: ");
+                    }}
+                while(stck[pro]<=0 || vals!=1);
             if (pro==0){
                 car=pre[pro];
                 bar=pre[pro];}
